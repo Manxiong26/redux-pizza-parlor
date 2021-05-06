@@ -23,32 +23,13 @@ function PizzaList() {
     //         })
     // }
 
-    const getPizzaList = () => {
-    axios.get('/api/pizza')
-    .then((response) => {
-        dispatch({type: 'SET_PIZZA_LIST', payload: response.data})
-    })
-    .catch((err) => {
-        console.log(err);
-    })
-}
-// const addPizza = (newPizza) => {
-//         axios.post('/api/pizza')
-//         .then((response) => {
-//             console.log(response);
-//             getPizzaList();
-//         })
-//         .catch((err) => {
-//             console.log(err);
-//         })
-//     }
 
 
-    useEffect(() => {
-        console.log('In useEffect');
-        getPizzaList();
-        addPizza()
-    }, []);
+
+    // useEffect(() => {
+    //     console.log('In useEffect');
+    //     getPizzaList();
+    // }, []);
 
     const pizzaList = useSelector( store => store.pizzaList );
 
@@ -56,9 +37,9 @@ function PizzaList() {
         <>
             <div className="PizzaList">
                 <ul>
-                    {pizzaList.map((pizza, i) => {
-                   return <PizzaItem key={i} pizza={pizza} /> 
-                    })}
+                    {pizzaList.map((pizza, i) => 
+                   <PizzaItem key={i}pizza={pizza} />
+                    )}
                 </ul>
             </div>
         </>
