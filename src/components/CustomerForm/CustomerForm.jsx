@@ -14,29 +14,29 @@ function CustomerForm (){
     return(
         <div>
             <h1>Prime Pizza</h1>
-            <p>Total {reduxStore.price}</p>
+            <p>Total {reduxStore.total}</p>
             <br />
             <h2>Step: 2 Customer Information</h2>
             <form>
                 <input
                     required
                     placeholder='Name'
-                    value={}
+                    value={customer_name}
                 />
                 <input
                     required
                     placeholder='Street Address'
-                    value={}
+                    value={street_address}
                 />
                 <input
                     required
                     placeholder='City'
-                    value={}
+                    value={city}
                 />
                 <input
                     required
                     placeholder='Zipcode'
-                    value={}
+                    value={zip}
                 />
                 <button onClick={handleSubmit}>Next</button>
             </form>
