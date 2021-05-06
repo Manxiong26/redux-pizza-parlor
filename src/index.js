@@ -7,7 +7,7 @@ import App from './components/App/App';
 import { applyMiddleware, createStore, combineReducers } from 'redux';
 
 import logger from 'redux-logger';
-import { createStore, combineReducers, applyMiddleware } from 'redux';
+
 import { Provider } from 'react-redux';
 
 
