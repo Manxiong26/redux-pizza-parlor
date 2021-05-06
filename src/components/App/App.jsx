@@ -14,6 +14,9 @@ function App() {
   
       <img src='images/pizza_photo.png' />
       <p>Pizza is great.</p>
+      <Router>
+          <Route exact path="/" component={Home} />
+      </Router>
   
     </div>
   );
