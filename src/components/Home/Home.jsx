@@ -8,7 +8,7 @@ function Home(){
 
     useEffect(() => {
         console.log('in useEffect')
-        getStudents();
+        getPizzaList();
         getOder();
     }, [])
 
