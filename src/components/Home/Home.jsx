@@ -1,6 +1,7 @@
 const { default: axios } = require("axios")
 import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
+import PizzaList from '../PizzaList/PizzaList'
 
 function Home(){
 
@@ -9,7 +10,7 @@ function Home(){
     useEffect(() => {
         console.log('in useEffect')
         getPizzaList();
-        getOder();
+        getOrder();
     }, [])
 
 const getPizzaList = () => {
@@ -21,7 +22,7 @@ const getPizzaList = () => {
         console.log(err);
     })
 }
-const getOder = () =>{
+const getOrder = () =>{
     axios.get('/api/order')
     .then((response) => {
         dispatch({type: 'SET_ORDER', payload: response.data})
@@ -46,6 +47,8 @@ const addPizza = () => {
         <div>
             <h2>Add a Pizza</h2>
             <h2>Pizza List:</h2>
+            <PizzaList addPizza={addPizza}/>
+            
         </div>
     )
 }
