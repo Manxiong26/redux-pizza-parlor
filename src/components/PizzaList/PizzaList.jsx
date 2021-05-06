@@ -2,6 +2,7 @@ import axios from 'axios';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
+
 function PizzaList() {
 
     const dispatch = useDispatch();
@@ -26,4 +27,22 @@ function PizzaList() {
         console.log('In useEffect');
         getPizzaList();
     }, []);
+
+    const pizzaList = useSelector( store => store.pizzaStore );
+
+    return (
+        <>
+            <div className="PizzaList">
+                <ul>
+                    {pizzaList.map((pizza) =>
+                    <PizzaItem pizza={pizza} /> 
+                    )}
+                </ul>
+            </div>
+        </>
+    )
 }
+
+
+
+export default PizzaList;
