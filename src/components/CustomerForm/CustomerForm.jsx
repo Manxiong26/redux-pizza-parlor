@@ -1,5 +1,12 @@
+import {useHistory} from 'react-router-dom';
+
 function CustomerForm (){
 
+    function handleSubmit(event){
+        event.PreventDefault();
+        history.push('/checkout');
+        console.log('inside handleSubmit on CustomerForm');
+    }
     return(
         <form>
             <input
@@ -22,7 +29,7 @@ function CustomerForm (){
                 placeholder='Zipcode'
                 value={}
             />
-            <button onClick={}>Next</button>
+            <button onClick={handleSubmit}>Next</button>
         </form>
     )
 }
