@@ -1,6 +1,11 @@
 import React from 'react';
 import axios from 'axios';
 import './App.css';
+import Home from '../Home/Home';
+import {
+  HashRouter as Router,
+  Route,
+} from 'react-router-dom';
 
 function App() {
 
@@ -12,6 +17,9 @@ function App() {
   
       <img src='images/pizza_photo.png' />
       <p>Pizza is great.</p>
+      <Router>
+          <Route exact path="/" component={Home} />
+      </Router>
   
     </div>
   );
