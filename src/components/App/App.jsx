@@ -3,11 +3,13 @@ import axios from 'axios';
 import './App.css';
 import CustomerForm from '../CustomerForm/CustomerForm';
 import AdminOrders from '../AdminOrders/AdminOrders';
+
 import {
   HashRouter as Router,
   Route,
 } from 'react-router-dom';
 import Home from '../Home/Home'
+
 
 function App() {
 
@@ -21,6 +23,8 @@ function App() {
       <p>Pizza is great.</p>
       <Router>
           <Route exact path="/" component={Home} />
+          <Route path="/CustomerForm" component={CustomerForm} />
+          <Route exact path="/AdminOrders" component={AdminOrders} />
       </Router>
   
     </div>
