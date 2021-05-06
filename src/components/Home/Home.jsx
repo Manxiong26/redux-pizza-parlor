@@ -8,7 +8,7 @@ function Home(){
 
     useEffect(() => {
         console.log('in useEffect')
-        getStudents();
+        getPizzaList();
         getOder();
     }, [])
 
@@ -32,7 +32,7 @@ const getOder = () =>{
 }
 
 const addPizza = () => {
-    axios.post('//api/pizza')
+    axios.post('/api/pizza')
     .then((response) => {
         console.log(response);
         getPizzaList();
