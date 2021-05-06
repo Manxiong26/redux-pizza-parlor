@@ -9,7 +9,7 @@ function Home(){
     useEffect(() => {
         console.log('in useEffect')
         getPizzaList();
-        getOder();
+        getOrder();
     }, [])
 
 const getPizzaList = () => {
@@ -21,7 +21,7 @@ const getPizzaList = () => {
         console.log(err);
     })
 }
-const getOder = () =>{
+const getOrder = () =>{
     axios.get('/api/order')
     .then((response) => {
         dispatch({type: 'SET_ORDER', payload: response.data})
