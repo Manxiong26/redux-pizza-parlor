@@ -1,11 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import './App.css';
-import Home from '../Home/Home';
-import {
-  HashRouter as Router,
-  Route,
-} from 'react-router-dom';
+import CustomerForm from '../CustomerForm/CustomerForm';
 
 function App() {
 
