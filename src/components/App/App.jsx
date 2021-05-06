@@ -3,6 +3,7 @@ import axios from 'axios';
 import './App.css';
 import CustomerForm from '../CustomerForm/CustomerForm';
 import AdminOrders from '../AdminOrders/AdminOrders';
+import { Route } from 'react-router';
 
 function App() {
 
@@ -16,6 +17,8 @@ function App() {
       <p>Pizza is great.</p>
       <Router>
           <Route exact path="/" component={Home} />
+          <Route path="/CustomerForm" component={CustomerForm} />
+          <Route exact path="/AdminOrders" component={AdminOrders} />
       </Router>
   
     </div>
