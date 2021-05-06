@@ -9,7 +9,7 @@ import AdminOrders from '../AdminOrders/AdminOrders';
 
 
 import Home from '../Home/Home'
-
+import PizzaList from '../PizzaList/PizzaList'
 
 function App() {
 
@@ -25,6 +25,7 @@ function App() {
           <Route exact path="/" component={Home} />
           <Route path="/CustomerForm" component={CustomerForm} />
           <Route exact path="/AdminOrders" component={AdminOrders} />
+          <Route path="/PizzaList" component={PizzaList}/>
       </Router>
   
     </div>
