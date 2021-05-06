@@ -1,10 +1,14 @@
+import {useHistory} from 'react-router-dom'
+
 
 function PizzaItem({pizza}) {
+
+const history = useHistory();
 
 const handleSubmit = (event) => {
     event.preventDefault();
     console.log('Picked Pizza Clicked');
-
+    history.push('/CustomerForm')
 }
 
     return (
