@@ -25,11 +25,23 @@ const orderList = (state = [], action ) => {
     return state;
 }
 
+const selectedPizza = (state = {}, action) => {
+    if (action.type === 'SET_SELECTED_PIZZA') {
+        // return action.payload;
+        return {
+            ...state,
+            
+            [action.payload.property]: action.payload.value
+        }
+    } return state;
+} 
+
 
 const storeInstance = createStore(
     combineReducers({
         pizzaList,
-        orderList
+        orderList,
+        selectedPizza
     }),
     applyMiddleware(logger),
 );

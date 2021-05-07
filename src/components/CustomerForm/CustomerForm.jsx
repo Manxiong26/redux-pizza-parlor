@@ -1,26 +1,34 @@
 import {useHistory} from 'react-router-dom';
-import {useSelector} from 'react-redux';
+import {useDispatch, useSelector} from 'react-redux';
 import {useState} from 'react';
+import PizzaItem from '../PizzaItem/PizzaItem';
 
-function CustomerForm (){
+function CustomerForm (pizza){
 
     const [customerName, setCustomerName] = useState('');
     const [streetAddress, setStreetAddress] = useState('');
     const [city, setCity] = useState('');
     const [zip, setZip] = useState('');
 
-    const reduxStore = useSelector(store => store);
+    const selectedPizza = useSelector( store => store.selectedPizza );
     const history = useHistory();
+    const dispatch = useDispatch();
 
     function handleSubmit(event){
         event.preventDefault();
         history.push('/checkout');
         console.log('inside handleSubmit on CustomerForm');
+        // dispatch({
+        //     type: 'SET_SELECTED_PIZZA',
+        //     payload: { property: 'price', value: event.target.value }
+        // })
+
     }
     return(
         <div>
             <h1>Prime Pizza</h1>
-            <p>Total {reduxStore.total}</p>
+            <p key={pizza.id}>Total: ${selectedPizza.price}</p>
+            {/* <PizzaItem key={pizza.id} pizza={pizza.price}/> */}
             <br />
             <h2>Step: 2 Customer Information</h2>
             <form >
