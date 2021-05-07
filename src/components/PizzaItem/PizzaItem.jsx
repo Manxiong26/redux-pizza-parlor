@@ -1,14 +1,21 @@
+import { useDispatch } from 'react-redux';
 import {useHistory} from 'react-router-dom'
 
 
 function PizzaItem({pizza}) {
 
 const history = useHistory();
+const dispatch = useDispatch();
 
 const handleSubmit = (event) => {
     event.preventDefault();
     console.log('Picked Pizza Clicked');
     history.push('/CustomerForm')
+    dispatch({
+        type: 'SET_SELECTED_PIZZA',
+        payload: { property: 'price', value: pizza.price }
+        
+    })
 }
 
     return (
