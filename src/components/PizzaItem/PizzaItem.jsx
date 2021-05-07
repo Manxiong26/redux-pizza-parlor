@@ -14,6 +14,7 @@ const handleSubmit = (event) => {
     dispatch({
         type: 'SET_SELECTED_PIZZA',
         payload: { property: 'price', value: pizza.price }
+        
     })
 }
 

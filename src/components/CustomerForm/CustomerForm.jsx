@@ -18,10 +18,10 @@ function CustomerForm (pizza){
         event.preventDefault();
         history.push('/checkout');
         console.log('inside handleSubmit on CustomerForm');
-        // dispatch({
-        //     type: 'SET_SELECTED_PIZZA',
-        //     payload: { property: 'price', value: event.target.value }
-        // })
+        dispatch({
+            type: 'SET_SELECTED_PIZZA',
+            payload: { property: 'name', value: pizza.name }
+        })
 
     }
     return(
@@ -37,25 +37,25 @@ function CustomerForm (pizza){
                     placeholder='Name'
                     value={customerName}
                     onChange = {(event) => setCustomerName(event.target.value)}
-                />
+                /> <br /><br />
                 <input
                     required
                     placeholder='Street Address'
                     value={streetAddress}
                     onChange = {(event) => setStreetAddress(event.target.value)}
-                />
+                /> <br /><br />
                 <input
                     required
                     placeholder='City'
                     value={city}
                     onChange = {(event) => setCity(event.target.value)}
-                />
+                /> <br /><br />
                 <input
                     required
                     placeholder='Zipcode'
                     value={zip}
                     onChange = {(event) => setZip(event.target.value)}
-                />
+                /> <br /><br />
                 <button onClick={handleSubmit}>Next</button>
             </form>
         </div>
